@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-kit",
+  "description": "CryptoGnome's curated, minimal, opinionated Claude Code skills. Install once, use on every project, keep in sync.",
+  "owner": {
+    "name": "CryptoGnome",
+    "url": "https://github.com/CryptoGnome"
+  },
+  "plugins": [
+    {
+      "name": "claude-kit",
+      "source": "./",
+      "description": "The full claude-kit skill collection.",
+      "category": "workflow",
+      "keywords": ["skills", "workflow", "curated", "minimal", "devlog"]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# Secrets — NEVER commit. (See GOVERNANCE.md rule 5.)
+key.txt
+*.key
+.env
+.env.*
+secrets.json
+*.secret
+
+# Generated skill output (don't ship local artifacts)
+devlog-*.md
+*.prompt.txt
+
+# Dependencies / build
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

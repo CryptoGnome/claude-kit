@@ -1,0 +1,14 @@
+{
+  "name": "claude-kit",
+  "version": "0.1.0",
+  "description": "CryptoGnome's curated minimal skill collection for Claude Code.",
+  "author": {
+    "name": "CryptoGnome",
+    "url": "https://github.com/CryptoGnome"
+  },
+  "homepage": "https://github.com/CryptoGnome/claude-kit",
+  "repository": "https://github.com/CryptoGnome/claude-kit",
+  "license": "MIT",
+  "keywords": ["skills", "workflow", "curated", "minimal"],
+  "skills": "./skills/"
+}
