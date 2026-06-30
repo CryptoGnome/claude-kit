@@ -46,7 +46,6 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 | [`frontend-taste`](skills/frontend-taste/SKILL.md) | Anti-slop guardrails for NEW frontend UI — design read, variance/motion/density dials, countable layout rules, em-dash ban | none |
 | [`redesign-existing-projects`](skills/redesign-existing-projects/SKILL.md) | Upgrade an EXISTING site to premium quality without breaking it — audit, prioritized fixes, works with any stack | none |
 | [`design-mockup`](skills/design-mockup/SKILL.md) | Generate concept/mockup images from a prompt (+ refs) via OpenRouter + Gemini — any style, no forced brand look | OpenRouter key (env / gitignored `key.txt`) |
-| [`concept-to-3d`](skills/concept-to-3d/SKILL.md) | Turn a 2D concept into a game-ready `.glb` for Godot via Blender (blender-mcp) + Rodin/Hyper3D | Hyper3D key (Blender panel) |
 
 _Curated deliberately — see [PLAN.md](PLAN.md) for the roadmap and [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
 

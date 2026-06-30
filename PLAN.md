@@ -30,7 +30,7 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 | `hive-post` | **Local-only** — Hive/PeakD blogging, niche to your workflow; not part of the shared kit | — | — |
 | `peakd-publish` | **Local-only** — Hive broadcast via hive-js (posting key); too personal + secret-heavy to share | — | — |
 | `discord-update` | **Local-only** — TerraCore Discord webhook; not part of the shared kit | — | — |
-| `concept-to-3d` | **Shipped v0.1.2** — ported as-is; depends on `design-mockup`; Hyper3D key set in Blender panel (not committed) | Hyper3D key | ✅ |
+| `concept-to-3d` | **Removed in v0.2.0 — local-only** — niche game-art tooling, out of scope for a general kit | — | — |
 
 ## New / house skills (written our way)
 
@@ -42,9 +42,10 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 
 - **v0.1 (done):** scaffold + governance + roadmap (no bundled skill; `devlog` stays local-only).
 - **v0.1.1 (done):** `semver` — teaches SemVer so agents version the kit (and any project) correctly.
-- **v0.1.2 (done):** the full planned skill set, in one pre-1.0 release (patch): `lazy-surgical`, `frontend-taste`, `redesign-existing-projects`, `design-mockup`, `concept-to-3d`.
+- **v0.1.2:** added `lazy-surgical`, `frontend-taste`, `redesign-existing-projects`, `design-mockup`, `concept-to-3d`.
+- **v0.2.0 (done):** removed `concept-to-3d` (out of scope for a general kit; stays local). Breaking ⇒ minor bump pre-1.0.
 - **Next:** cut **`1.0.0`** once the skill set feels stable (per the `semver` skill, the pre-1.0 → 1.0 stabilization milestone). Optional later: `security-review` (deepsec wrap) if you start running security passes.
 
-> **Local-only (not in the kit):** `devlog`, `hive-post`, `peakd-publish`, `discord-update`, `generate-image` — all tuned to a personal Hive/Discord/TerraCore workflow and/or secret-heavy. They live in `~/.claude/skills/` and are deliberately excluded from the shared, public kit.
+> **Local-only (not in the kit):** `devlog`, `hive-post`, `peakd-publish`, `discord-update`, `generate-image`, `concept-to-3d` — personal or niche tooling (Hive/Discord/TerraCore workflow, game-art) and/or secret-heavy. They live in `~/.claude/skills/` and are deliberately excluded from the shared, public kit.
 
 Each port follows [GOVERNANCE.md](GOVERNANCE.md): audit for secrets/paths → trigger-engineer the description → minimize the body → test triggering → changelog + version bump.

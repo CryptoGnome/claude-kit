@@ -2,6 +2,14 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.2.0] — 2026-06-30
+
+### Removed
+- **`concept-to-3d`** — dropped from the kit; it's niche game-art tooling (Blender + Hyper3D → Godot) that doesn't fit a general, shareable kit. Stays local-only in `~/.claude/skills/`.
+
+> _Graveyard: `concept-to-3d` removed in v0.2.0 — out of scope for a general kit._
+> **Versioning:** removing a published skill is a breaking change, so pre-1.0 this is a **minor** bump (`0.1.2 → 0.2.0`) per the `semver` skill's 0.x rule.
+
 ## [0.1.2] — 2026-06-30
 
 ### Added — the planned skill set (five skills)
