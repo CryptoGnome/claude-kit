@@ -27,10 +27,10 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 | `generate-image` | **Merge → deprecate** — `design-mockup` is the neutral superset; keep only if a thin brand wrapper is truly wanted | OpenRouter key | v0.2 |
 | `design-taste-frontend` | **Slim rewrite** — it's essentially taste-skill; either depend on upstream or distill our own shorter house version (don't re-vendor 13 skills) | none | v0.3 |
 | `redesign-existing-projects` | **Keep / slim** — pairs with taste; audit-first redesign | none | v0.3 |
-| `hive-post` | **Keep** — niche/personal; audit `instructions.md` for keys | likely cover-image key | v0.4 (publish bucket) |
-| `peakd-publish` | **Keep, careful** — broadcasts via hive-js; **Hive posting key must be env-only** | HIGH — posting key | v0.4 |
-| `discord-update` | **Keep** — **webhook URL must be env/config**, never committed | HIGH — webhook URL | v0.4 |
-| `concept-to-3d` | **Keep** — heavier (Blender + Rodin/Hyper3D); audit for API keys | possible Hyper3D key | v0.5 |
+| `hive-post` | **Local-only** — Hive/PeakD blogging, niche to your workflow; not part of the shared kit | — | — |
+| `peakd-publish` | **Local-only** — Hive broadcast via hive-js (posting key); too personal + secret-heavy to share | — | — |
+| `discord-update` | **Local-only** — TerraCore Discord webhook; not part of the shared kit | — | — |
+| `concept-to-3d` | **Keep** — heavier (Blender + Rodin/Hyper3D); audit for API keys | possible Hyper3D key | v0.4 |
 
 ## New skills to graft from pile 2 (written our way)
 
@@ -42,7 +42,8 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 - **v0.1 (done):** scaffold + governance + roadmap (no bundled skill; `devlog` stays local-only).
 - **v0.2:** `lazy-surgical` (the graft) + `design-mockup` (secret hygiene); fold in `generate-image`.
 - **v0.3:** `design-taste-frontend` (slim) + `redesign-existing-projects`.
-- **v0.4:** publish bucket — `hive-post`, `peakd-publish`, `discord-update` — each secret-audited and parameterized before it touches `main`.
-- **v0.5:** `concept-to-3d`.
+- **v0.4:** `concept-to-3d` (heavier; Blender + Rodin/Hyper3D).
+
+> **Local-only (not in the kit):** `devlog`, `hive-post`, `peakd-publish`, `discord-update` — all tuned to a personal Hive/Discord/TerraCore workflow and/or secret-heavy. They live in `~/.claude/skills/` and are deliberately excluded from the shared, public kit.
 
 Each port follows [GOVERNANCE.md](GOVERNANCE.md): audit for secrets/paths → trigger-engineer the description → minimize the body → test triggering → changelog + version bump.

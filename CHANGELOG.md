@@ -10,4 +10,4 @@ All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update
 - **Roadmap** ([PLAN.md](PLAN.md)) — curation buckets and the porting order for the kit.
 
 ### Notes
-- No skills are bundled in the scaffold. `devlog` is intentionally kept **local-only** (`~/.claude/skills/devlog`) — it's tuned to a personal workflow and is not part of the shared kit. The first curated skill ships in v0.2.
+- No skills are bundled in the scaffold. Several personal skills are intentionally kept **local-only** (in `~/.claude/skills/`) and are not part of the shared kit: `devlog`, `hive-post`, `peakd-publish`, `discord-update` — all tuned to a personal Hive/Discord/TerraCore workflow and/or secret-heavy. The first curated skill ships in v0.2.
