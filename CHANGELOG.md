@@ -2,6 +2,19 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.1.2] — 2026-06-30
+
+### Added — the planned skill set (five skills)
+- **`lazy-surgical`** `v1.0.0` — coding-discipline mode synthesizing Karpathy's guidelines + ponytail's YAGNI ladder, in our own voice: reuse-before-write ladder, surgical diffs, simple-first, goal-driven/verifiable, "when NOT to be lazy" guardrails, `lite`/`full`/`ultra` intensity. No secrets.
+- **`frontend-taste`** `v1.0.0` — slim house distillation of anti-slop frontend rules (credit: Leonxlnx/taste-skill, MIT): design read, 3 dials (8/6/4), real-design-system honesty, font/color/layout banlists, countable rules (eyebrow/zigzag/hero caps; one-accent/radius/theme locks), em-dash ban, pre-flight. Scoped to NEW builds. No secrets.
+- **`redesign-existing-projects`** `v1.0.0` — upgrade an existing site without breaking it. Split per governance into a slim `SKILL.md` (workflow, fix-priority, rules) + `references/audit-checklist.md` (the full category audit). No secrets.
+- **`design-mockup`** `v1.0.0` — generate concept/mockup images via OpenRouter + Gemini, project-agnostic. Ported clean: genericized the Python path; key via `OPENROUTER_API_KEY` env or gitignored `key.txt` (never committed). Ships `scripts/generate.py` + `references/prompt-templates.md`.
+- **`concept-to-3d`** `v1.0.0` — 2D concept → game-ready `.glb` in Godot via Blender (blender-mcp) + Rodin/Hyper3D. Depends on `design-mockup`. No committed secrets (Hyper3D key set in the Blender panel).
+
+### Notes
+- **Versioning:** five additions, but the kit is pre-1.0 and all are backwards-compatible, so this is a **patch** (`0.1.1 → 0.1.2`) per the 0.x rule — dogfooding the `semver` skill.
+- `generate-image` is **not** ported — on audit it's pure TerraCore brand tooling (brand suffix, on-disk TerraCore asset paths, the TerraCore game API). It stays **local-only**; `design-mockup` covers neutral image generation.
+
 ## [0.1.1] — 2026-06-30
 
 ### Added

@@ -1,0 +1,5 @@
+# This skill's OpenRouter key — NEVER commit it.
+key.txt
+# Local generation artifacts
+*.png
+*.prompt.txt

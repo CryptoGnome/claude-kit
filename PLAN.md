@@ -23,29 +23,28 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 | Skill | Decision | Secret audit | Priority |
 |---|---|---|---|
 | `devlog` | **Local-only** — stays in `~/.claude/skills/`, not part of the shared kit (tuned to a personal workflow) | none | — |
-| `design-mockup` | **Keep** — strip hard-coded Python path; keep env/`key.txt` key handling | OpenRouter key (env/gitignored) | v0.2 |
-| `generate-image` | **Merge → deprecate** — `design-mockup` is the neutral superset; keep only if a thin brand wrapper is truly wanted | OpenRouter key | v0.2 |
-| `design-taste-frontend` | **Slim rewrite** — it's essentially taste-skill; either depend on upstream or distill our own shorter house version (don't re-vendor 13 skills) | none | v0.3 |
-| `redesign-existing-projects` | **Keep / slim** — pairs with taste; audit-first redesign | none | v0.3 |
+| `design-mockup` | **Shipped v0.1.2** — Python path genericized; key via env/gitignored `key.txt`; ships `scripts/` + `references/` | OpenRouter key | ✅ |
+| `generate-image` | **Local-only** — pure TerraCore brand tooling (brand suffix, on-disk asset paths, game API); `design-mockup` covers neutral gen | — | — |
+| `design-taste-frontend` | **Shipped v0.1.2** as slim house skill `frontend-taste` — distilled from taste-skill, not re-vendored | none | ✅ |
+| `redesign-existing-projects` | **Shipped v0.1.2** — split into slim SKILL.md + `references/audit-checklist.md` | none | ✅ |
 | `hive-post` | **Local-only** — Hive/PeakD blogging, niche to your workflow; not part of the shared kit | — | — |
 | `peakd-publish` | **Local-only** — Hive broadcast via hive-js (posting key); too personal + secret-heavy to share | — | — |
 | `discord-update` | **Local-only** — TerraCore Discord webhook; not part of the shared kit | — | — |
-| `concept-to-3d` | **Keep** — heavier (Blender + Rodin/Hyper3D); audit for API keys | possible Hyper3D key | v0.4 |
+| `concept-to-3d` | **Shipped v0.1.2** — ported as-is; depends on `design-mockup`; Hyper3D key set in Blender panel (not committed) | Hyper3D key | ✅ |
 
 ## New / house skills (written our way)
 
 - **`semver`** (shipped v0.1.1) — house/meta skill, not from pile 2: teaches SemVer so the agent versions the kit and any project correctly. Foundational discipline the kit (and its own governance) relies on.
-- **`lazy-surgical`** (or similar) — a house coding-discipline skill synthesizing karpathy (think-first, surgical, simple, goal-driven) + ponytail (reuse-before-write ladder, "when not to be lazy", tunable intensity). Shareable, no secrets, high value. **Best showcase of the "best parts" approach → port as skill #2.**
+- **`lazy-surgical`** (shipped v0.1.2) — house coding-discipline skill synthesizing Karpathy (think-first, surgical, simple, goal-driven) + ponytail (reuse-before-write ladder, "when not to be lazy", tunable intensity). The showcase of the "best parts, our way" approach.
 - **`security-review`** (optional) — deepsec-skill model: wrap the `deepsec` CLI with a free-recon→approval→paid-process gate. Add only if you actually run security passes.
 
 ## Porting order
 
 - **v0.1 (done):** scaffold + governance + roadmap (no bundled skill; `devlog` stays local-only).
-- **v0.1.1 (done):** `semver` — the first real skill; teaches SemVer so agents version the kit (and any project) correctly.
-- **v0.2:** `lazy-surgical` (the graft) + `design-mockup` (secret hygiene); fold in `generate-image`.
-- **v0.3:** `design-taste-frontend` (slim) + `redesign-existing-projects`.
-- **v0.4:** `concept-to-3d` (heavier; Blender + Rodin/Hyper3D).
+- **v0.1.1 (done):** `semver` — teaches SemVer so agents version the kit (and any project) correctly.
+- **v0.1.2 (done):** the full planned skill set, in one pre-1.0 release (patch): `lazy-surgical`, `frontend-taste`, `redesign-existing-projects`, `design-mockup`, `concept-to-3d`.
+- **Next:** cut **`1.0.0`** once the skill set feels stable (per the `semver` skill, the pre-1.0 → 1.0 stabilization milestone). Optional later: `security-review` (deepsec wrap) if you start running security passes.
 
-> **Local-only (not in the kit):** `devlog`, `hive-post`, `peakd-publish`, `discord-update` — all tuned to a personal Hive/Discord/TerraCore workflow and/or secret-heavy. They live in `~/.claude/skills/` and are deliberately excluded from the shared, public kit.
+> **Local-only (not in the kit):** `devlog`, `hive-post`, `peakd-publish`, `discord-update`, `generate-image` — all tuned to a personal Hive/Discord/TerraCore workflow and/or secret-heavy. They live in `~/.claude/skills/` and are deliberately excluded from the shared, public kit.
 
 Each port follows [GOVERNANCE.md](GOVERNANCE.md): audit for secrets/paths → trigger-engineer the description → minimize the body → test triggering → changelog + version bump.
