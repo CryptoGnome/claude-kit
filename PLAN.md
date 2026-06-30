@@ -22,7 +22,7 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 
 | Skill | Decision | Secret audit | Priority |
 |---|---|---|---|
-| `devlog` | **Keep** — port done, paths sanitized | none | ✅ v0.1 |
+| `devlog` | **Local-only** — stays in `~/.claude/skills/`, not part of the shared kit (tuned to a personal workflow) | none | — |
 | `design-mockup` | **Keep** — strip hard-coded Python path; keep env/`key.txt` key handling | OpenRouter key (env/gitignored) | v0.2 |
 | `generate-image` | **Merge → deprecate** — `design-mockup` is the neutral superset; keep only if a thin brand wrapper is truly wanted | OpenRouter key | v0.2 |
 | `design-taste-frontend` | **Slim rewrite** — it's essentially taste-skill; either depend on upstream or distill our own shorter house version (don't re-vendor 13 skills) | none | v0.3 |
@@ -39,7 +39,7 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 
 ## Porting order
 
-- **v0.1 (done):** scaffold + governance + `devlog`.
+- **v0.1 (done):** scaffold + governance + roadmap (no bundled skill; `devlog` stays local-only).
 - **v0.2:** `lazy-surgical` (the graft) + `design-mockup` (secret hygiene); fold in `generate-image`.
 - **v0.3:** `design-taste-frontend` (slim) + `redesign-existing-projects`.
 - **v0.4:** publish bucket — `hive-post`, `peakd-publish`, `discord-update` — each secret-audited and parameterized before it touches `main`.

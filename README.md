@@ -18,16 +18,16 @@ Skills are then available everywhere as `/<skill-name>` (e.g. `/devlog`).
 **Option B — the `skills` CLI (copy-and-own a single skill):**
 
 ```
-npx skills add CryptoGnome/claude-kit                 # the whole kit
-npx skills add CryptoGnome/claude-kit --skill devlog  # just one
+npx skills add CryptoGnome/claude-kit                   # the whole kit
+npx skills add CryptoGnome/claude-kit --skill <name>    # just one
 ```
 
 **Option C — manual (copy into your skills folder):**
 
 ```bash
 git clone https://github.com/CryptoGnome/claude-kit.git
-cp -r claude-kit/skills/devlog ~/.claude/skills/      # personal (all projects)
-# or into a project:  cp -r claude-kit/skills/devlog .claude/skills/
+cp -r claude-kit/skills/<name> ~/.claude/skills/      # personal (all projects)
+# or into a project:  cp -r claude-kit/skills/<name> .claude/skills/
 ```
 
 ## Update
@@ -39,11 +39,7 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 
 ## Skills
 
-| Skill | What it does | Secrets |
-|---|---|---|
-| [`devlog`](skills/devlog/SKILL.md) | Structured changelog/devlog from git commits → markdown + Discord summary | none |
-
-_More skills are ported in deliberately — see [PLAN.md](PLAN.md) for the roadmap and [GOVERNANCE.md](GOVERNANCE.md) for the rules every skill must pass._
+_None bundled yet — the scaffold ships first. The first curated skill lands in **v0.2**. See [PLAN.md](PLAN.md) for the roadmap and [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
 
 ## Philosophy
 

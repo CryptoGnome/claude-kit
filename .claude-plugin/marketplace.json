@@ -12,7 +12,7 @@
       "source": "./",
       "description": "The full claude-kit skill collection.",
       "category": "workflow",
-      "keywords": ["skills", "workflow", "curated", "minimal", "devlog"]
+      "keywords": ["skills", "workflow", "curated", "minimal"]
     }
   ]
 }

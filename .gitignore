@@ -7,7 +7,6 @@ secrets.json
 *.secret
 
 # Generated skill output (don't ship local artifacts)
-devlog-*.md
 *.prompt.txt
 
 # Dependencies / build
