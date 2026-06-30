@@ -32,14 +32,16 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 | `discord-update` | **Local-only** — TerraCore Discord webhook; not part of the shared kit | — | — |
 | `concept-to-3d` | **Keep** — heavier (Blender + Rodin/Hyper3D); audit for API keys | possible Hyper3D key | v0.4 |
 
-## New skills to graft from pile 2 (written our way)
+## New / house skills (written our way)
 
+- **`semver`** (shipped v0.1.1) — house/meta skill, not from pile 2: teaches SemVer so the agent versions the kit and any project correctly. Foundational discipline the kit (and its own governance) relies on.
 - **`lazy-surgical`** (or similar) — a house coding-discipline skill synthesizing karpathy (think-first, surgical, simple, goal-driven) + ponytail (reuse-before-write ladder, "when not to be lazy", tunable intensity). Shareable, no secrets, high value. **Best showcase of the "best parts" approach → port as skill #2.**
 - **`security-review`** (optional) — deepsec-skill model: wrap the `deepsec` CLI with a free-recon→approval→paid-process gate. Add only if you actually run security passes.
 
 ## Porting order
 
 - **v0.1 (done):** scaffold + governance + roadmap (no bundled skill; `devlog` stays local-only).
+- **v0.1.1 (done):** `semver` — the first real skill; teaches SemVer so agents version the kit (and any project) correctly.
 - **v0.2:** `lazy-surgical` (the graft) + `design-mockup` (secret hygiene); fold in `generate-image`.
 - **v0.3:** `design-taste-frontend` (slim) + `redesign-existing-projects`.
 - **v0.4:** `concept-to-3d` (heavier; Blender + Rodin/Hyper3D).

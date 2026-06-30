@@ -19,15 +19,15 @@ Skills are then available everywhere as `/<skill-name>` (e.g. `/devlog`).
 
 ```
 npx skills add CryptoGnome/claude-kit                   # the whole kit
-npx skills add CryptoGnome/claude-kit --skill <name>    # just one
+npx skills add CryptoGnome/claude-kit --skill semver    # just one
 ```
 
 **Option C — manual (copy into your skills folder):**
 
 ```bash
 git clone https://github.com/CryptoGnome/claude-kit.git
-cp -r claude-kit/skills/<name> ~/.claude/skills/      # personal (all projects)
-# or into a project:  cp -r claude-kit/skills/<name> .claude/skills/
+cp -r claude-kit/skills/semver ~/.claude/skills/      # personal (all projects)
+# or into a project:  cp -r claude-kit/skills/semver .claude/skills/
 ```
 
 ## Update
@@ -39,7 +39,11 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 
 ## Skills
 
-_None bundled yet — the scaffold ships first. The first curated skill lands in **v0.2**. See [PLAN.md](PLAN.md) for the roadmap and [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
+| Skill | What it does | Secrets |
+|---|---|---|
+| [`semver`](skills/semver/SKILL.md) | Decide the correct next version with Semantic Versioning — major/minor/patch, the 0.x rule, pre-release tags, and the changelog→tag release flow | none |
+
+_Curated deliberately — see [PLAN.md](PLAN.md) for the roadmap and [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
 
 ## Philosophy
 
