@@ -1,6 +1,6 @@
 ---
 name: redesign-existing-projects
-description: Upgrade an EXISTING website or app to premium quality without breaking it. Audits the current design, finds generic/AI patterns, and applies high-end fixes that work with the existing stack (any CSS framework or vanilla CSS). Use when the user wants to redesign, polish, upgrade, modernize, or "make an existing site look less generic / more premium". Do NOT use for building a brand-new site from scratch — use frontend-taste for that.
+description: Upgrade an EXISTING website or app to premium quality without breaking it. Audits the current design, finds generic/AI patterns, and applies high-end fixes that work with the existing stack (any CSS framework or vanilla CSS). Use when the user wants to redesign, polish, upgrade, modernize, or "make an existing site look less generic / more premium". Do NOT use for building a brand-new site from scratch — use frontend-design for that.
 version: 1.0.0
 license: MIT
 ---
@@ -11,7 +11,7 @@ Upgrade what's already there. Work with the existing stack — do not migrate fr
 
 ## Workflow
 1. **Scan** — read the codebase. Identify the framework, styling method (Tailwind v3/v4, vanilla CSS, styled-components, …), and current design patterns.
-2. **Diagnose** — first apply the shared aesthetic rules from the [`frontend-taste`](../frontend-taste/SKILL.md) skill (fonts, color, layout clichés, interactive states, copy tells — the one source of truth), then run the existing-code audit in [`references/audit-checklist.md`](references/audit-checklist.md). List every generic pattern, weak point, and missing state you find.
+2. **Diagnose** — first apply the shared aesthetic rules from the [`frontend-design`](../frontend-design/SKILL.md) skill (fonts, color, layout clichés, interactive states, copy tells — the one source of truth), then run the existing-code audit in [`references/audit-checklist.md`](references/audit-checklist.md). List every generic pattern, weak point, and missing state you find.
 3. **Fix** — apply targeted upgrades within the existing stack. Improve what's there; keep changes small and reviewable.
 
 ## Fix priority (max impact, min risk)
@@ -29,4 +29,4 @@ Upgrade what's already there. Work with the existing stack — do not migrate fr
 - Check the project's dependency file before importing any new library; check the Tailwind version (v3 vs v4) before touching config.
 - Small, targeted improvements over big rewrites. Keep diffs reviewable.
 
-The audit checklist ([`references/audit-checklist.md`](references/audit-checklist.md)) covers only what's **specific to auditing existing code** — surface/alignment craft, component swaps, iconography, code quality, accessibility & strategic omissions, and premium upgrade techniques. The shared aesthetic rules (fonts, color, layout, states, copy) live once in [`frontend-taste`](../frontend-taste/SKILL.md). Apply both during **Diagnose**.
+The audit checklist ([`references/audit-checklist.md`](references/audit-checklist.md)) covers only what's **specific to auditing existing code** — surface/alignment craft, component swaps, iconography, code quality, accessibility & strategic omissions, and premium upgrade techniques. The shared aesthetic rules (fonts, color, layout, states, copy) live once in [`frontend-design`](../frontend-design/SKILL.md). Apply both during **Diagnose**.

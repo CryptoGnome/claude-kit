@@ -2,6 +2,11 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.4.0] — 2026-06-30
+
+### Changed
+- **Renamed `frontend-taste` → `frontend-design`** — a clearer, less loaded name. Skill folder, frontmatter `name`, and every cross-reference (README, `redesign-existing-projects`) updated. Renaming a published skill is breaking, so pre-1.0 this is a **minor** bump (`0.3.1 → 0.4.0`) per the `semver` skill.
+
 ## [0.3.1] — 2026-06-30
 
 ### Changed

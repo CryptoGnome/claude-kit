@@ -2,9 +2,9 @@
 
 Reference for the `redesign-existing-projects` skill. During **Diagnose**, first apply the shared aesthetic rules, then run the existing-code checks below.
 
-## Shared aesthetic rules → `frontend-taste` (one source of truth)
+## Shared aesthetic rules → `frontend-design` (one source of truth)
 
-The core "does this look AI-generated" tells are the same whether you build new or fix existing, so they live once in the [`frontend-taste`](../../frontend-taste/SKILL.md) skill — apply those first:
+The core "does this look AI-generated" tells are the same whether you build new or fix existing, so they live once in the [`frontend-design`](../../frontend-design/SKILL.md) skill — apply those first:
 - **Type:** not Inter/Roboto as default (Geist / Outfit / Cabinet Grotesk / Satoshi); body ≤ 65ch; serif discipline.
 - **Color:** one accent, saturation < 80%, no AI-purple/blue-glow gradient, no default premium-beige palette.
 - **Layout clichés:** no centered-hero-over-mesh, no three-equal-cards, no glass-on-everything; eyebrow / zigzag / hero caps; one accent + one radius + one theme locked.

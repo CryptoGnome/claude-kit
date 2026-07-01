@@ -1,11 +1,11 @@
 ---
-name: frontend-taste
-description: Design-taste guardrails for building NEW frontend UI (landing pages, portfolios, marketing sites) that doesn't look AI-templated. Infers the right direction from the brief, sets variance/motion/density dials, and enforces countable anti-slop rules. Use when building or designing a new landing page, hero, portfolio, or marketing site, or when the user wants UI that "looks less generic / less AI / more designed". Do NOT use for dashboards or data-dense product UI; to upgrade an EXISTING site use redesign-existing-projects instead.
+name: frontend-design
+description: Frontend-design guardrails for building NEW frontend UI (landing pages, portfolios, marketing sites) that doesn't look AI-templated. Infers the right direction from the brief, sets variance/motion/density dials, and enforces countable anti-slop rules. Use when building or designing a new landing page, hero, portfolio, or marketing site, or when the user wants UI that "looks less generic / less AI / more designed". Do NOT use for dashboards or data-dense product UI; to upgrade an EXISTING site use redesign-existing-projects instead.
 version: 1.0.0
 license: MIT
 ---
 
-# frontend-taste — build UI that isn't templated
+# frontend-design — build UI that isn't templated
 
 For **new** landing pages, portfolios, and marketing sites. Every rule here is contextual — read the brief first, then pull only what fits. (Distilled in our own way from the anti-slop ideas in [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), MIT.)
 

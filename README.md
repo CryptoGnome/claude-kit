@@ -43,7 +43,7 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 |---|---|---|
 | [`semver`](skills/semver/SKILL.md) | Decide the correct next version with Semantic Versioning — major/minor/patch, the 0.x rule, pre-release tags, the changelog→tag flow | none |
 | [`lazy-surgical`](skills/lazy-surgical/SKILL.md) | Coding-discipline mode: the least code that fully solves it — reuse before writing, surgical diffs, simple-first, verifiable done (`lite`/`full`/`ultra`) | none |
-| [`frontend-taste`](skills/frontend-taste/SKILL.md) | Anti-slop guardrails for NEW frontend UI — design read, variance/motion/density dials, countable layout rules, em-dash ban | none |
+| [`frontend-design`](skills/frontend-design/SKILL.md) | Anti-slop guardrails for NEW frontend UI — design read, variance/motion/density dials, countable layout rules, em-dash ban | none |
 | [`redesign-existing-projects`](skills/redesign-existing-projects/SKILL.md) | Upgrade an EXISTING site to premium quality without breaking it — audit, prioritized fixes, works with any stack | none |
 | [`image-gen`](skills/image-gen/SKILL.md) | Generate any kind of image via OpenRouter — pick from several models (Gemini / GPT / FLUX / Seedream / Grok), built-in prompt & style help | OpenRouter key (env / gitignored `key.txt`) |
 
