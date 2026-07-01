@@ -2,6 +2,14 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [1.0.0] — 2026-07-01
+
+**First stable release.** Sixteen curated, self-contained Claude Code skills across Discipline, Frontend, Content, and Web3, plus an always-on `lazy-surgical` hook. The set is settled — from here, SemVer's post-1.0 rules apply (new skill = minor, rename/removal = major, fix = patch).
+
+### Changed
+- **`seo-geo-aeo` deepened → `v1.1.0`.** Added a **Technical SEO** section (indexability, canonical / robots / sitemap correctness, 301s / redirect chains, HTTPS / mobile, hreflang), **AI-crawler & GEO** specifics (`robots.txt` for GPTBot / OAI-SearchBot / ClaudeBot / PerplexityBot / Google-Extended / CCBot, `llms.txt`, Bing + IndexNow since ChatGPT search reads Bing), **search-intent matching**, and named the Core Web Vitals metrics (LCP / INP / CLS). Enriched `references/schema-snippets.md` with **Product** and **LocalBusiness**. Same skill, same triggers.
+- **`GOVERNANCE.md` versioning** updated to the post-1.0 rules.
+
 ## [0.5.5] — 2026-07-01
 
 ### Added

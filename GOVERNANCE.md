@@ -57,9 +57,9 @@ Max 1024 chars. Third person ("Use when…"), never "I can…".
 ## Updating an existing skill
 
 1. **Edit in place. Subtract first.** The best change is usually deleting a line, not adding one. Only add what earns its place.
-2. **Bump the version** (SemVer — see the [`semver`](skills/semver/SKILL.md) skill for the full decision):
-   - **Post-1.0:** **patch** = wording/fixes; **minor** = a new skill or new capability; **major** = rename, removal, or a breaking change to triggers/args.
-   - **Pre-1.0 (where we are now, `0.y.z`):** anything may still change. A **breaking** change bumps **minor** (`0.3.1 → 0.4.0`); a new skill, capability, fix, or wording bumps **patch** (`0.3.1 → 0.3.2`). Cut **`1.0.0`** once the skill set stabilizes.
+2. **Bump the version** (SemVer — see the [`semver`](skills/semver/SKILL.md) skill for the full decision). **The kit is now 1.x**, so post-1.0 rules apply:
+   - **patch** = wording/fixes; **minor** = a new skill or a new capability in an existing one; **major** = a rename, removal, or a breaking change to a skill's triggers/args.
+   - (History: while pre-1.0 we bumped **minor** for breaking changes and **patch** for additions/fixes; `1.0.0` was cut once the skill set stabilized.)
    - Always bump `plugin.json` `version` when anything ships (this is what `/plugin update` keys on).
 3. **Record it** in `CHANGELOG.md` with the date and what changed.
 4. **Tag & push:** `git tag vX.Y.Z && git push --tags`. That's how plugin consumers pull the update.

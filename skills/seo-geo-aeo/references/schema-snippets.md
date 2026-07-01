@@ -73,3 +73,44 @@ Copy-paste `<script type="application/ld+json">` templates for the `seo-geo-aeo`
   ]
 }
 ```
+
+## Product — e-commerce rich results
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "...",
+  "image": "https://.../product.png",
+  "description": "...",
+  "brand": { "@type": "Brand", "name": "..." },
+  "offers": {
+    "@type": "Offer",
+    "price": "29.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://..."
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "128" }
+}
+```
+
+## LocalBusiness — local pack + AEO
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "...",
+  "url": "https://...",
+  "telephone": "+1-555-000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "...",
+    "addressLocality": "...",
+    "addressRegion": "..",
+    "postalCode": "...",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": "..", "longitude": ".." },
+  "openingHours": "Mo-Fr 09:00-17:00"
+}
+```
