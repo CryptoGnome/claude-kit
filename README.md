@@ -41,7 +41,7 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 
 ## Skills
 
-Twelve skills, grouped by what they're for. All auto-activate by description (or run any with `/<name>`).
+Fifteen skills, grouped by what they're for. All auto-activate by description (or run any with `/<name>`).
 
 ### Discipline & workflow
 | Skill | What it does | Secrets |
@@ -64,8 +64,15 @@ Twelve skills, grouped by what they're for. All auto-activate by description (or
 | Skill | What it does | Secrets |
 |---|---|---|
 | [`marketing-copy`](skills/marketing-copy/SKILL.md) | High-converting copy — positioning, headline/CTA formulas, page structure, offer & objection frameworks | none |
+| [`seo-geo-aeo`](skills/seo-geo-aeo/SKILL.md) | Search & AI-answer readiness audit — SEO + AEO + GEO checklists, schema, a 1–10 scored report | none |
 | [`image-gen`](skills/image-gen/SKILL.md) | Generate any image via OpenRouter (Gemini / GPT / FLUX / Seedream / Grok) + prompt/style help | OpenRouter key |
 | [`remotion`](skills/remotion/SKILL.md) | Programmatic video in React (Remotion) — frame-driven animation, deterministic rendering, sequencing | none |
+
+### Web3 / crypto
+| Skill | What it does | Secrets |
+|---|---|---|
+| [`ethereum`](skills/ethereum/SKILL.md) | Production EVM — Solidity security, Foundry testing, gas/L2 choices, Scaffold-ETH 2 / viem / wagmi | none |
+| [`solana`](skills/solana/SKILL.md) | Production Solana — @solana/kit, Anchor & Pinocchio, PDAs/CPIs, Token-2022, program security, testing | none |
 
 _Curated deliberately — see [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
 

@@ -2,6 +2,15 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.5.4] — 2026-07-01
+
+### Added — three skills (crypto + SEO)
+- **`ethereum`** `v1.0.0` — production EVM: Solidity security (CEI/reentrancy, `SafeERC20`, 6-decimal tokens, oracle/MEV/proxy rules), Foundry testing (`bound` not `vm.assume`, fork tests, fuzz/invariant), Scaffold-ETH 2 / viem / wagmi frontend + four-state tx UX, plus a verify-live current-network reference. Slim `SKILL.md` + `references/reference.md`. (from Austin Griffith's ethskills)
+- **`solana`** `v1.0.0` — production Solana: `@solana/kit` over web3.js, Anchor + Pinocchio, PDA/bump canonicalization, the security vuln catalog (no `init_if_needed`, signer/owner checks, close-to-prevent-revival, Token-2022), Codama codegen, LiteSVM/Mollusk/Surfpool testing, tx-safety guardrails. Slim `SKILL.md` + `references/security-and-troubleshooting.md`. (from the Solana Foundation's solana-dev-skill, MIT)
+- **`seo-geo-aeo`** `v1.0.0` — search & AI-answer readiness audit: SEO + AEO + GEO checklists (hard numbers + schema types), a 1–10 scored markdown report, and copy-paste JSON-LD snippets. **Rebuilt from a safety-audited source** (SNLabat/SEO-GEO-AEO-Skill — verified pure markdown, no scripts/hooks/network; we dropped its docx/PDF + machine-specific paths). Zero-dependency, WebFetch-only, consent-gated. Slim `SKILL.md` + `references/schema-snippets.md`.
+
+All self-contained; no committed secrets (crypto skills reference external toolchains the project already has). Additive + pre-1.0 ⇒ **patch** (`0.5.3 → 0.5.4`).
+
 ## [0.5.3] — 2026-07-01
 
 ### Added
