@@ -62,7 +62,7 @@ Max 1024 chars. Third person ("Use when…"), never "I can…".
    - (History: while pre-1.0 we bumped **minor** for breaking changes and **patch** for additions/fixes; `1.0.0` was cut once the skill set stabilized.)
    - Always bump `plugin.json` `version` when anything ships (this is what `/plugin update` keys on).
 3. **Record it** in `CHANGELOG.md` with the date and what changed.
-4. **Tag & push:** `git tag vX.Y.Z && git push --tags`. That's how plugin consumers pull the update.
+4. **Tag & push:** `git tag vX.Y.Z && git push --tags` — that's how plugin consumers pull the update (the `/plugin` flow only needs the tag + `plugin.json` version). For **minor and milestone** versions, also cut a **GitHub Release** from the tag (`gh release create vX.Y.Z --notes-file <the CHANGELOG section>`) so watchers get an announcement and a clean "Latest release." **Patches stay tag-only** to avoid Releases-page noise — Releases are for humans, not the installer.
 5. **Re-test triggering.**
 
 ---
