@@ -1,5 +1,7 @@
 # claude-kit
 
+![claude-kit — curated, minimal, opinionated Claude Code skills](assets/banner.png)
+
 > CryptoGnome's curated, minimal, opinionated Claude Code skills. Install once, use on every project, keep in sync, share with anyone.
 
 This is **not** a kitchen-sink mega-pack. It's a small, ruthlessly-curated set of skills written *our way* — taking the best parts of the skills worth borrowing, stripped to their essence, portable across projects, and free of machine-specific defaults and secrets.
