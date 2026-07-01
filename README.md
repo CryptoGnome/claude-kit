@@ -2,52 +2,65 @@
 
 ![claude-kit — curated, minimal, opinionated Claude Code skills](assets/banner.png)
 
+[![skills.sh](https://skills.sh/b/CryptoGnome/claude-kit)](https://skills.sh/CryptoGnome/claude-kit)
+[![Release](https://img.shields.io/github/v/release/CryptoGnome/claude-kit)](https://github.com/CryptoGnome/claude-kit/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 > CryptoGnome's curated, minimal, opinionated Claude Code skills. Install once, use on every project, keep in sync, share with anyone.
 
-This is **not** a kitchen-sink mega-pack. It's a small, ruthlessly-curated set of skills written *our way* — taking the best parts of the skills worth borrowing, stripped to their essence, portable across projects, and free of machine-specific defaults and secrets.
+Not a kitchen-sink mega-pack — a small, ruthlessly-curated set written *our way*: the best parts of the skills worth borrowing, stripped to their essence, portable across projects, and free of machine-specific defaults and secrets.
 
-## Install
+## Quickstart
 
-**Option A — native plugin (recommended, cross-project, auto-updates):**
+1. **Add the marketplace + install** (in Claude Code):
+   ```
+   /plugin marketplace add CryptoGnome/claude-kit
+   /plugin install claude-kit@claude-kit
+   ```
+2. **Restart your session** — the skills load and the always-on `lazy-surgical` hook activates.
+3. **Just work.** Skills fire automatically when your task matches; or run any explicitly with `/<name>` (e.g. `/security-audit`).
 
+No config. Works with any model.
+
+<details><summary>Other ways to install</summary>
+
+**`skills` CLI (copy-and-own):**
 ```
-/plugin marketplace add CryptoGnome/claude-kit
-/plugin install claude-kit@claude-kit
+npx skills add CryptoGnome/claude-kit                    # the whole kit
+npx skills add CryptoGnome/claude-kit --skill research   # just one
+npx skills add CryptoGnome/claude-kit --list             # list what's inside
 ```
 
-Skills are then available everywhere as `/<skill-name>` (e.g. `/semver`).
-
-**Option B — the `skills` CLI (copy-and-own a single skill):**
-
-```
-npx skills add CryptoGnome/claude-kit                   # the whole kit
-npx skills add CryptoGnome/claude-kit --skill semver    # just one
-```
-
-**Option C — manual (copy into your skills folder):**
-
+**Manual:**
 ```bash
 git clone https://github.com/CryptoGnome/claude-kit.git
-cp -r claude-kit/skills/semver ~/.claude/skills/      # personal (all projects)
-# or into a project:  cp -r claude-kit/skills/semver .claude/skills/
+cp -r claude-kit/skills/research ~/.claude/skills/       # personal (all projects)
 ```
+</details>
 
 ## Update
+`/plugin marketplace update claude-kit` (or enable auto-update in `/plugin`) pulls new versions and skills. Manual/CLI installs: `git pull` and re-run `npx skills add`. See [CHANGELOG.md](CHANGELOG.md).
 
-- **Plugin install:** `/plugin marketplace update claude-kit` (or enable auto-update in `/plugin`). New version, new skills, improvements — all pulled in.
-- **Manual / CLI install:** `git pull` and re-copy, or re-run `npx skills add`.
+## Why these exist
 
-See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
+Each skill removes a specific pain of coding with an AI agent:
+
+- **The agent over-builds or drifts** → `lazy-surgical` (least code, surgical diffs) + `grill` (align before building) + `research` (get the facts first).
+- **The output looks like generic AI** → `anti-slop-frontend` / `redesign-existing-projects` for UI, `marketing-copy` / `seo-geo-aeo` for words.
+- **Security & quality slip through** → `security-audit` (agent-powered vuln audit), `a11y-audit`, `react-best-practices`.
+- **Crypto code is easy to get wrong** → `ethereum` and `solana` (chain-specific security + tooling).
+- **The workflow glue** → `semver`, `handoff`, `caveman`, `image-gen`, `remotion`.
 
 ## Skills
 
-Sixteen skills, grouped by what they're for. All auto-activate by description (or run any with `/<name>`).
+Seventeen skills, grouped by what they're for. **All are model-invoked** — Claude reaches for them automatically when your task matches, or you name them with `/<name>` (`handoff` is invoke-only).
 
 ### Discipline & workflow
 | Skill | What it does | Secrets |
 |---|---|---|
 | [`lazy-surgical`](skills/lazy-surgical/SKILL.md) | The least code that fully solves it — reuse first, surgical diffs, simple, verifiable (`lite`/`full`/`ultra`). Always-on via hook | none |
 | [`grill`](skills/grill/SKILL.md) | Interrogate the plan (one question at a time, with recommended answers) until aligned, before any code | none |
+| [`research`](skills/research/SKILL.md) | Delegate reading legwork to a background agent — investigate PRIMARY sources → a cited Markdown note to work against | none |
 | [`handoff`](skills/handoff/SKILL.md) | Compact the session into a standalone handoff doc for a fresh agent (invoke-only) | none |
 | [`caveman`](skills/caveman/SKILL.md) | Terse-output mode — strips filler, keeps every fact/command exact (`lite`/`full`/`ultra`) | none |
 | [`semver`](skills/semver/SKILL.md) | The correct next version via SemVer — major/minor/patch, the 0.x rule, changelog→tag flow | none |
@@ -75,13 +88,10 @@ Sixteen skills, grouped by what they're for. All auto-activate by description (o
 | [`ethereum`](skills/ethereum/SKILL.md) | Production EVM — Solidity security, Foundry testing, gas/L2 choices, Scaffold-ETH 2 / viem / wagmi | none |
 | [`solana`](skills/solana/SKILL.md) | Production Solana — @solana/kit, Anchor & Pinocchio, PDAs/CPIs, Token-2022, program security, testing | none |
 
-_Curated deliberately — see [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
+## Always-on discipline
 
-## Always-on discipline (hook)
-
-You **don't** have to invoke skills with slash commands. Most skills **auto-activate by description** when your request matches them — or run any explicitly with `/<name>` (`handoff` is invoke-only).
-
-`lazy-surgical` is a coding *temperament* you'd want on every edit, so the kit ships a `SessionStart` hook ([`hooks/hooks.json`](hooks/hooks.json) → [`hooks/session-start.js`](hooks/session-start.js)) that injects its rules into **every session** automatically. (`hooks/hooks.json` is auto-loaded by Claude Code — it is intentionally **not** declared in `plugin.json`, which would double-load it.) To turn it off, disable the plugin in `/plugin` or delete `hooks/hooks.json` from your copy. (Requires Node.js; if Node isn't present the hook is skipped harmlessly.)
+> [!NOTE]
+> You don't have to type slash commands — most skills **auto-activate by description**. The one exception by design is `lazy-surgical`: it's a coding *temperament* for every edit, so the kit ships a `SessionStart` hook ([`hooks/hooks.json`](hooks/hooks.json) → [`hooks/session-start.js`](hooks/session-start.js)) that injects it into **every session**. Turn it off by disabling the plugin in `/plugin` or deleting `hooks/hooks.json`. (Needs Node.js; skipped harmlessly if absent. The file is auto-loaded, so it's intentionally not declared in `plugin.json`.)
 
 ## Philosophy
 
@@ -90,6 +100,10 @@ You **don't** have to invoke skills with slash commands. Most skills **auto-acti
 - **Rules as countable checks, not vibes.** "≤ 4 elements", "trace every line to the request" — not "use good judgment".
 - **Trigger-engineered descriptions.** Each skill says exactly when to fire and when *not* to.
 - **Portable & safe by default.** No machine-specific paths, no committed secrets, ever.
+
+## Adding a skill
+
+Every skill clears the bar in [GOVERNANCE.md](GOVERNANCE.md) before it lands: one job per skill, a trigger-engineered description, countable rules over vibes, and a hard **no committed secrets / no machine-specific paths** audit. Versioning follows the [`semver`](skills/semver/SKILL.md) skill; minor & milestone releases get a GitHub Release. New skills are distilled *in our own way* from the best sources — credited, never blindly vendored.
 
 ## License
 

@@ -2,6 +2,15 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [1.1.0] — 2026-07-01
+
+### Added
+- **`research`** `v1.0.0` — delegate reading legwork to a **background agent**: investigate a question against **primary sources** (docs / source code / specs / first-party APIs), follow each claim to its source, and leave a single cited Markdown note to work against. Feeds `grill`/planning; scoped so it doesn't overlap a heavy deep-research harness. (from Matt Pocock's `research`) First post-1.0 **minor** (`1.0.0 → 1.1.0`).
+
+### Changed
+- **README revamp** (structure borrowed from mattpocock/skills, kept in our voice): a "Why these exist" pitch section (skills grouped by the pain they remove), a numbered **Quickstart** with the hook-activation step, a model-invoked explainer, a `> [!NOTE]` hook callout, an **Adding a skill** section linking `GOVERNANCE.md`, `<details>` progressive disclosure for alternate installs, and a badge row (**skills.sh** + release + license).
+- **skills.sh:** added the skills.sh badge and surfaced the `npx skills add` path. Listing on skills.sh is **automatic via install telemetry** (Vercel's `skills` CLI treats GitHub as the registry) — no submission/PR/manifest needed; the kit is already eligible and surfaces as it gets installs.
+
 ## [1.0.0] — 2026-07-01
 
 **First stable release.** Sixteen curated, self-contained Claude Code skills across Discipline, Frontend, Content, and Web3, plus an always-on `lazy-surgical` hook. The set is settled — from here, SemVer's post-1.0 rules apply (new skill = minor, rename/removal = major, fix = patch).
