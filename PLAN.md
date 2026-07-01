@@ -23,7 +23,7 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 | Skill | Decision | Secret audit | Priority |
 |---|---|---|---|
 | `devlog` | **Local-only** — stays in `~/.claude/skills/`, not part of the shared kit (tuned to a personal workflow) | none | — |
-| `design-mockup` | **Shipped v0.1.2** — Python path genericized; key via env/gitignored `key.txt`; ships `scripts/` + `references/` | OpenRouter key | ✅ |
+| `design-mockup` | **Folded into `image-gen`** (v0.3.0) — game-art templates moved into the prompt guide; skill removed | — | — |
 | `generate-image` | **Local-only** — pure TerraCore brand tooling (brand suffix, on-disk asset paths, game API); `design-mockup` covers neutral gen | — | — |
 | `design-taste-frontend` | **Shipped v0.1.2** as slim house skill `frontend-taste` — distilled from taste-skill, not re-vendored | none | ✅ |
 | `redesign-existing-projects` | **Shipped v0.1.2** — split into slim SKILL.md + `references/audit-checklist.md` | none | ✅ |
@@ -36,6 +36,7 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 
 - **`semver`** (shipped v0.1.1) — house/meta skill, not from pile 2: teaches SemVer so the agent versions the kit and any project correctly. Foundational discipline the kit (and its own governance) relies on.
 - **`lazy-surgical`** (shipped v0.1.2) — house coding-discipline skill synthesizing Karpathy (think-first, surgical, simple, goal-driven) + ponytail (reuse-before-write ladder, "when not to be lazy", tunable intensity). The showcase of the "best parts, our way" approach.
+- **`image-gen`** (shipped v0.3.0) — general OpenRouter image generator; verified multi-model menu + prompt/style guide. `design-mockup` was folded into it.
 - **`security-review`** (optional) — deepsec-skill model: wrap the `deepsec` CLI with a free-recon→approval→paid-process gate. Add only if you actually run security passes.
 
 ## Porting order
@@ -44,6 +45,7 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 - **v0.1.1 (done):** `semver` — teaches SemVer so agents version the kit (and any project) correctly.
 - **v0.1.2:** added `lazy-surgical`, `frontend-taste`, `redesign-existing-projects`, `design-mockup`, `concept-to-3d`.
 - **v0.2.0 (done):** removed `concept-to-3d` (out of scope for a general kit; stays local). Breaking ⇒ minor bump pre-1.0.
+- **v0.3.0 (done):** added `image-gen` (general OpenRouter image gen) and folded `design-mockup` into it.
 - **Next:** cut **`1.0.0`** once the skill set feels stable (per the `semver` skill, the pre-1.0 → 1.0 stabilization milestone). Optional later: `security-review` (deepsec wrap) if you start running security passes.
 
 > **Local-only (not in the kit):** `devlog`, `hive-post`, `peakd-publish`, `discord-update`, `generate-image`, `concept-to-3d` — personal or niche tooling (Hive/Discord/TerraCore workflow, game-art) and/or secret-heavy. They live in `~/.claude/skills/` and are deliberately excluded from the shared, public kit.

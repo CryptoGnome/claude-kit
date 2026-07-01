@@ -2,6 +2,17 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.3.0] — 2026-06-30
+
+### Added
+- **`image-gen`** `v1.0.0` — one general image generator via OpenRouter. Verified model menu (Gemini 3.1 Flash / 3 Pro / 2.5 Flash, GPT-5 image, FLUX.2, Seedream 4.5, Grok Imagine — confirmed against OpenRouter's live catalog, June 2026), a **stdlib-only** `scripts/generate.py` that auto-selects the right endpoint (chat + `modalities` for Gemini/GPT, `/api/v1/images` for the rest — no `pip install`), and a folded prompt/style guide (`references/prompt-guide.md`). Key via `OPENROUTER_API_KEY` env or gitignored `key.txt` (never committed).
+
+### Removed / folded
+- **`design-mockup`** — folded into `image-gen`; its game-art/UI templates now live in `image-gen/references/prompt-guide.md`. Local copy untouched. `frontend-taste` repointed to `image-gen`.
+
+> _Graveyard: `design-mockup` merged into `image-gen` in v0.3.0._
+> **Versioning:** removing a published skill is breaking, so pre-1.0 this is a **minor** bump (`0.2.0 → 0.3.0`) per the `semver` skill's 0.x rule — even though on net a skill was added.
+
 ## [0.2.0] — 2026-06-30
 
 ### Removed

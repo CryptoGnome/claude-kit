@@ -42,7 +42,7 @@ If the brief reads enterprise / Material / Carbon / Fluent / Primer / public-sec
 No em-dash (—) anywhere in visible copy. It's the #1 LLM tell. Use a period, a comma, or restructure. One visible em-dash = pre-flight fail.
 
 ## 6. Real images, full states
-- Landing pages are visual products. If an image-gen tool exists (e.g. the [`design-mockup`](../design-mockup/SKILL.md) skill), use it for hero/section assets; else use `https://picsum.photos/seed/<desc>/<w>/<h>`. No div-based fake screenshots, no hand-rolled decorative SVGs as default. Even minimalist sites need 2–3 real images.
+- Landing pages are visual products. If an image-gen tool exists (e.g. the [`image-gen`](../image-gen/SKILL.md) skill), use it for hero/section assets; else use `https://picsum.photos/seed/<desc>/<w>/<h>`. No div-based fake screenshots, no hand-rolled decorative SVGs as default. Even minimalist sites need 2–3 real images.
 - Ship full interactive cycles: loading (skeletons, not spinners), empty, error, hover, and `:active` tactile feedback. Verify button/text and form contrast (WCAG AA).
 
 ## 7. Copy tells
