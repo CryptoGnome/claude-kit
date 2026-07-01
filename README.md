@@ -49,22 +49,31 @@ Each skill removes a specific pain of coding with an AI agent:
 - **The output looks like generic AI** → `anti-slop-frontend` / `redesign-existing-projects` for UI, `marketing-copy` / `seo-geo-aeo` for words.
 - **Security & quality slip through** → `security-audit` (agent-powered vuln audit), `a11y-audit`, `react-best-practices`.
 - **Crypto code is easy to get wrong** → `ethereum` and `solana` (chain-specific security + tooling).
+- **Hard bugs, murky design, no plan** → `diagnosing-bugs` (feedback-loop-first debugging), `codebase-design` (deep modules), `prototype` (throwaway code to settle a design question), `plan-to-issues` (PRD → vertical slices).
 - **The workflow glue** → `semver`, `handoff`, `caveman`, `image-gen`, `remotion`.
 
 ## Skills
 
-Seventeen skills, grouped by what they're for. **All are model-invoked** — Claude reaches for them automatically when your task matches, or you name them with `/<name>` (`handoff` is invoke-only).
+Twenty-one skills, grouped by what they're for. **All are model-invoked** — Claude reaches for them automatically when your task matches, or you name them with `/<name>` (`handoff` is invoke-only).
 
-### Discipline & workflow
+### Coding discipline & craft
 | Skill | What it does | Secrets |
 |---|---|---|
 | [`lazy-surgical`](skills/lazy-surgical/SKILL.md) | The least code that fully solves it — reuse first, surgical diffs, simple, verifiable (`lite`/`full`/`ultra`). Always-on via hook | none |
-| [`grill`](skills/grill/SKILL.md) | Interrogate the plan (one question at a time, with recommended answers) until aligned, before any code | none |
-| [`research`](skills/research/SKILL.md) | Delegate reading legwork to a background agent — investigate PRIMARY sources → a cited Markdown note to work against | none |
-| [`handoff`](skills/handoff/SKILL.md) | Compact the session into a standalone handoff doc for a fresh agent (invoke-only) | none |
+| [`codebase-design`](skills/codebase-design/SKILL.md) | Design deep modules — lots of behaviour behind a small interface at a clean seam, testable through it (precise shared vocabulary) | none |
+| [`diagnosing-bugs`](skills/diagnosing-bugs/SKILL.md) | Feedback-loop-first debugging for hard/flaky bugs & perf regressions — reproduce → minimise → hypothesise → instrument → fix | none |
+| [`security-audit`](skills/security-audit/SKILL.md) | Deep vulnerability audit via parallel subagents — triage → source→sink → adversarial FP cull → ranked findings (no paid tools) | none |
 | [`caveman`](skills/caveman/SKILL.md) | Terse-output mode — strips filler, keeps every fact/command exact (`lite`/`full`/`ultra`) | none |
 | [`semver`](skills/semver/SKILL.md) | The correct next version via SemVer — major/minor/patch, the 0.x rule, changelog→tag flow | none |
-| [`security-audit`](skills/security-audit/SKILL.md) | Deep vulnerability audit via parallel subagents — triage → source→sink → adversarial FP cull → ranked findings (no paid tools) | none |
+
+### Planning & workflow
+| Skill | What it does | Secrets |
+|---|---|---|
+| [`grill`](skills/grill/SKILL.md) | Interrogate the plan (one question at a time, with recommended answers) until aligned, before any code | none |
+| [`research`](skills/research/SKILL.md) | Delegate reading legwork to a background agent — investigate PRIMARY sources → a cited Markdown note to work against | none |
+| [`prototype`](skills/prototype/SKILL.md) | Throwaway prototype to settle ONE design question — a terminal app for state/logic, or toggleable UI variants | none |
+| [`plan-to-issues`](skills/plan-to-issues/SKILL.md) | Synthesize a PRD (no interview) then cut it into end-to-end vertical-slice issues — via `gh` or markdown | none |
+| [`handoff`](skills/handoff/SKILL.md) | Compact the session into a standalone handoff doc for a fresh agent (invoke-only) | none |
 
 ### Frontend & design
 | Skill | What it does | Secrets |

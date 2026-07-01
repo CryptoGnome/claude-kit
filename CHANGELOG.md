@@ -2,6 +2,19 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [1.2.0] — 2026-07-01
+
+### Added — four engineering skills (from mattpocock/skills, distilled our way)
+- **`diagnosing-bugs`** `v1.0.0` — feedback-loop-first debugging for hard/flaky bugs & perf regressions: build a fast deterministic red/green loop *before* theorising, then reproduce → minimise → hypothesise (ranked, falsifiable) → instrument (one variable) → fix + regression-test at a correct seam → clean up.
+- **`codebase-design`** `v1.0.0` — designing **deep modules** (lots of behaviour behind a small interface at a clean seam): a precise shared vocabulary, the deletion test, "two adapters not one", "the interface is the test surface", a testability trio, + `references/deepening.md`. (Ousterhout × Feathers)
+- **`prototype`** `v1.0.0` — a **throwaway** prototype to settle ONE design question: a terminal app for state/logic (`references/logic.md`) or several structurally-different UI variants on one route (`references/ui.md`). Keep the answer, delete the code.
+- **`plan-to-issues`** `v1.0.0` — synthesize a PRD (no interview) then cut it into end-to-end **vertical-slice** issues; publishes via `gh` or writes markdown. Portable — his personal issue-tracker setup stripped out.
+
+### Changed
+- **README skills reorganized** into 5 groups (Coding discipline & craft · Planning & workflow · Frontend & design · Content & visuals · Web3) now that the kit is **21 skills**; "Why these exist" extended.
+
+Adding skills = **minor** (`1.1.0 → 1.2.0`).
+
 ## [1.1.0] — 2026-07-01
 
 ### Added
