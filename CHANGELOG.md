@@ -2,6 +2,11 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.4.1] — 2026-07-01
+
+### Added
+- **`SessionStart` hook** (`hooks/hooks.json` + `hooks/session-start.js`) — injects the `lazy-surgical` coding discipline into every session's context so it's always applied without invoking `/lazy-surgical`. Compact directive scoped to coding work, with a pointer to the full skill and a nudge to use `semver` for version bumps. Requires Node.js; non-blocking if absent. Additive + pre-1.0 ⇒ **patch** (`0.4.0 → 0.4.1`).
+
 ## [0.4.0] — 2026-06-30
 
 ### Changed

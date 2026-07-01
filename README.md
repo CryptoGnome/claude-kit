@@ -49,6 +49,12 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 
 _Curated deliberately — see [PLAN.md](PLAN.md) for the roadmap and [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
 
+## Always-on discipline (hook)
+
+You **don't** have to invoke skills with slash commands. The task-shaped skills (`image-gen`, `frontend-design`, `redesign-existing-projects`, `semver`) **auto-activate by description** when your request matches them — or run them explicitly with `/<name>`.
+
+`lazy-surgical` is a coding *temperament* you'd want on every edit, so the kit ships a `SessionStart` hook ([`hooks/session-start.js`](hooks/session-start.js)) that injects its rules into **every session** automatically. To turn it off, disable the plugin's hook in `/plugin` or remove the `hooks` field from your copy's `.claude-plugin/plugin.json`. (Requires Node.js; if Node isn't present the hook is skipped harmlessly.)
+
 ## Philosophy
 
 - **Subtraction over accumulation.** A skill earns its place or it's cut.

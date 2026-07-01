@@ -46,6 +46,9 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 - **v0.1.2:** added `lazy-surgical`, `frontend-design`, `redesign-existing-projects`, `design-mockup`, `concept-to-3d`.
 - **v0.2.0 (done):** removed `concept-to-3d` (out of scope for a general kit; stays local). Breaking ⇒ minor bump pre-1.0.
 - **v0.3.0 (done):** added `image-gen` (general OpenRouter image gen) and folded `design-mockup` into it.
+- **v0.3.1 (done):** de-duped `redesign-existing-projects` against `frontend-design`.
+- **v0.4.0 (done):** renamed `frontend-taste` → `frontend-design`.
+- **v0.4.1 (done):** added a `SessionStart` hook that keeps `lazy-surgical` always-on (no slash needed).
 - **Next:** cut **`1.0.0`** once the skill set feels stable (per the `semver` skill, the pre-1.0 → 1.0 stabilization milestone). Optional later: `security-review` (deepsec wrap) if you start running security passes.
 
 > **Local-only (not in the kit):** `devlog`, `hive-post`, `peakd-publish`, `discord-update`, `generate-image`, `concept-to-3d` — personal or niche tooling (Hive/Discord/TerraCore workflow, game-art) and/or secret-heavy. They live in `~/.claude/skills/` and are deliberately excluded from the shared, public kit.
