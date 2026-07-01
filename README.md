@@ -13,7 +13,7 @@ This is **not** a kitchen-sink mega-pack. It's a small, ruthlessly-curated set o
 /plugin install claude-kit@claude-kit
 ```
 
-Skills are then available everywhere as `/<skill-name>` (e.g. `/devlog`).
+Skills are then available everywhere as `/<skill-name>` (e.g. `/semver`).
 
 **Option B — the `skills` CLI (copy-and-own a single skill):**
 
@@ -39,19 +39,36 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 
 ## Skills
 
+Eleven skills, grouped by what they're for. All auto-activate by description (or run any with `/<name>`).
+
+### Discipline & workflow
 | Skill | What it does | Secrets |
 |---|---|---|
-| [`semver`](skills/semver/SKILL.md) | Decide the correct next version with Semantic Versioning — major/minor/patch, the 0.x rule, pre-release tags, the changelog→tag flow | none |
-| [`lazy-surgical`](skills/lazy-surgical/SKILL.md) | Coding-discipline mode: the least code that fully solves it — reuse before writing, surgical diffs, simple-first, verifiable done (`lite`/`full`/`ultra`) | none |
-| [`anti-slop-frontend`](skills/anti-slop-frontend/SKILL.md) | Anti-slop guardrails for NEW frontend UI — design read, variance/motion/density dials, countable layout rules, em-dash ban | none |
-| [`redesign-existing-projects`](skills/redesign-existing-projects/SKILL.md) | Upgrade an EXISTING site to premium quality without breaking it — audit, prioritized fixes, works with any stack | none |
-| [`image-gen`](skills/image-gen/SKILL.md) | Generate any kind of image via OpenRouter — pick from several models (Gemini / GPT / FLUX / Seedream / Grok), built-in prompt & style help | OpenRouter key (env / gitignored `key.txt`) |
+| [`lazy-surgical`](skills/lazy-surgical/SKILL.md) | The least code that fully solves it — reuse first, surgical diffs, simple, verifiable (`lite`/`full`/`ultra`). Always-on via hook | none |
+| [`grill`](skills/grill/SKILL.md) | Interrogate the plan (one question at a time, with recommended answers) until aligned, before any code | none |
+| [`handoff`](skills/handoff/SKILL.md) | Compact the session into a standalone handoff doc for a fresh agent (invoke-only) | none |
+| [`caveman`](skills/caveman/SKILL.md) | Terse-output mode — strips filler, keeps every fact/command exact (`lite`/`full`/`ultra`) | none |
+| [`semver`](skills/semver/SKILL.md) | The correct next version via SemVer — major/minor/patch, the 0.x rule, changelog→tag flow | none |
 
-_Curated deliberately — see [PLAN.md](PLAN.md) for the roadmap and [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
+### Frontend & design
+| Skill | What it does | Secrets |
+|---|---|---|
+| [`anti-slop-frontend`](skills/anti-slop-frontend/SKILL.md) | Anti-slop guardrails for NEW UI — design read, dials, countable layout rules, em-dash ban | none |
+| [`redesign-existing-projects`](skills/redesign-existing-projects/SKILL.md) | Upgrade an EXISTING site without breaking it — audit + prioritized fixes, any stack | none |
+| [`a11y-audit`](skills/a11y-audit/SKILL.md) | Audit UI code for accessibility/UX violations → terse `file:line` findings | none |
+| [`react-best-practices`](skills/react-best-practices/SKILL.md) | Fix React/Next.js perf + component architecture in impact order (waterfalls, bundles, RSC) | none |
+
+### Content & visuals
+| Skill | What it does | Secrets |
+|---|---|---|
+| [`marketing-copy`](skills/marketing-copy/SKILL.md) | High-converting copy — positioning, headline/CTA formulas, page structure, offer & objection frameworks | none |
+| [`image-gen`](skills/image-gen/SKILL.md) | Generate any image via OpenRouter (Gemini / GPT / FLUX / Seedream / Grok) + prompt/style help | OpenRouter key |
+
+_Curated deliberately — see [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
 
 ## Always-on discipline (hook)
 
-You **don't** have to invoke skills with slash commands. The task-shaped skills (`image-gen`, `anti-slop-frontend`, `redesign-existing-projects`, `semver`) **auto-activate by description** when your request matches them — or run them explicitly with `/<name>`.
+You **don't** have to invoke skills with slash commands. Most skills **auto-activate by description** when your request matches them — or run any explicitly with `/<name>` (`handoff` is invoke-only).
 
 `lazy-surgical` is a coding *temperament* you'd want on every edit, so the kit ships a `SessionStart` hook ([`hooks/hooks.json`](hooks/hooks.json) → [`hooks/session-start.js`](hooks/session-start.js)) that injects its rules into **every session** automatically. (`hooks/hooks.json` is auto-loaded by Claude Code — it is intentionally **not** declared in `plugin.json`, which would double-load it.) To turn it off, disable the plugin in `/plugin` or delete `hooks/hooks.json` from your copy. (Requires Node.js; if Node isn't present the hook is skipped harmlessly.)
 

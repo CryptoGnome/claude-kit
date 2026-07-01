@@ -2,6 +2,24 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.5.2] — 2026-07-01
+
+### Added — six skills (curated from the Firecrawl "best Claude Code skills" list, authored in our own voice)
+- **`handoff`** `v1.0.0` — compact a session into a standalone handoff doc (OS temp dir, "suggested skills" routing, secret redaction). Invoke-only. (from mattpocock/skills)
+- **`grill`** `v1.0.0` — interrogate the plan one question at a time (each with a recommended answer) until aligned, before coding. (from mattpocock/skills)
+- **`caveman`** `v1.0.0` — terse-output mode; strips filler, keeps facts/code byte-exact; `lite`/`full`/`ultra`; pairs with `lazy-surgical`. (from JuliusBrussee/caveman)
+- **`react-best-practices`** `v1.0.0` — React/Next.js performance + component architecture in impact order (waterfalls, bundle, RSC, server actions, compound components). (from vercel-labs/agent-skills)
+- **`a11y-audit`** `v1.0.0` — accessibility/UX audit → terse `file:line` findings; slim `SKILL.md` + `references/a11y-rules.md`. (from vercel-labs/web-interface-guidelines)
+- **`marketing-copy`** `v1.0.0` — high-converting copy (positioning, headline/CTA formulas, page structure, offer & objection frameworks); slim `SKILL.md` + `references/copy-frameworks.md`. (from coreyhaines31/marketingskills)
+
+All self-contained, no external deps, no secrets. Additive + pre-1.0 ⇒ **patch** (`0.5.1 → 0.5.2`).
+
+### Removed
+- **`PLAN.md`** — the roadmap/curation doc is retired; the kit's shape is settled and `GOVERNANCE.md` holds the rules. (A repo doc, not a skill — no consumer impact.)
+
+### Skipped from the list (already covered or out of scope)
+- Firecrawl · Karpathy (→ `lazy-surgical`) · Anthropic Frontend Design (official plugin + `anti-slop-frontend`) · PDF/DOCX/XLSX/PPTX, Skill Creator, code-simplifier, Webapp Testing (official/built-in) · Superpowers (too heavy) · Remotion (niche) · Trail of Bits (needs external CodeQL/Semgrep) · Context Mode (→ `handoff`).
+
 ## [0.5.1] — 2026-07-01
 
 ### Fixed
@@ -74,7 +92,7 @@ All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update
 ### Added
 - Repo scaffold: `.claude-plugin/` marketplace + plugin manifests, README, MIT license, `.gitignore` (secrets-aware).
 - **Governance rules** ([GOVERNANCE.md](GOVERNANCE.md)) — the bar for adding/updating/removing a skill.
-- **Roadmap** ([PLAN.md](PLAN.md)) — curation buckets and the porting order for the kit.
+- **Roadmap** (PLAN.md — since retired in v0.5.2) — curation buckets and the porting order for the kit.
 
 ### Notes
 - No skills are bundled in the scaffold. Several personal skills are intentionally kept **local-only** (in `~/.claude/skills/`) and are not part of the shared kit: `devlog`, `hive-post`, `peakd-publish`, `discord-update` — all tuned to a personal Hive/Discord/TerraCore workflow and/or secret-heavy. The first curated skill ships in v0.2.
