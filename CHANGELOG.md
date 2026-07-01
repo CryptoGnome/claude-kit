@@ -2,6 +2,11 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.3.1] — 2026-06-30
+
+### Changed
+- **De-duped `redesign-existing-projects` against `frontend-taste`.** The shared "AI design tells" (fonts, color, layout clichés, interactive states, copy voice) now live once in `frontend-taste`; `redesign`'s `references/audit-checklist.md` was rewritten to cover only what's specific to auditing/repairing existing code — surface & alignment craft, component swaps, iconography, code quality, accessibility & strategic omissions, and premium upgrade techniques — and points to `frontend-taste` for the rest. Same skill, same triggers ⇒ a **patch** (`0.3.0 → 0.3.1`).
+
 ## [0.3.0] — 2026-06-30
 
 ### Added
