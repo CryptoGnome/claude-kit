@@ -41,7 +41,7 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 
 ## Skills
 
-Eleven skills, grouped by what they're for. All auto-activate by description (or run any with `/<name>`).
+Twelve skills, grouped by what they're for. All auto-activate by description (or run any with `/<name>`).
 
 ### Discipline & workflow
 | Skill | What it does | Secrets |
@@ -65,6 +65,7 @@ Eleven skills, grouped by what they're for. All auto-activate by description (or
 |---|---|---|
 | [`marketing-copy`](skills/marketing-copy/SKILL.md) | High-converting copy — positioning, headline/CTA formulas, page structure, offer & objection frameworks | none |
 | [`image-gen`](skills/image-gen/SKILL.md) | Generate any image via OpenRouter (Gemini / GPT / FLUX / Seedream / Grok) + prompt/style help | OpenRouter key |
+| [`remotion`](skills/remotion/SKILL.md) | Programmatic video in React (Remotion) — frame-driven animation, deterministic rendering, sequencing | none |
 
 _Curated deliberately — see [GOVERNANCE.md](GOVERNANCE.md) for the bar every skill must clear before it's added._
 

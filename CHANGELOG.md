@@ -2,6 +2,11 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.5.3] — 2026-07-01
+
+### Added
+- **`remotion`** `v1.0.0` — rules & gotchas for Remotion (programmatic video in React → MP4): one clock only (`useCurrentFrame`; CSS/Tailwind animation forbidden), deterministic rendering (`random(seed)`, not `Math.random`), `interpolate`/`spring`, `useVideoConfig`, Studio-editable animation, `<Sequence>`/`<Series>` timing, `@remotion/media` assets, `calculateMetadata` for async data, and the `npx remotion` workflow. Self-contained, no deps/secrets; pairs with `react-best-practices`. (from remotion-dev/skills) Additive + pre-1.0 ⇒ **patch** (`0.5.2 → 0.5.3`).
+
 ## [0.5.2] — 2026-07-01
 
 ### Added — six skills (curated from the Firecrawl "best Claude Code skills" list, authored in our own voice)
