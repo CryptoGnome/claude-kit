@@ -41,7 +41,7 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in each version.
 
 ## Skills
 
-Fifteen skills, grouped by what they're for. All auto-activate by description (or run any with `/<name>`).
+Sixteen skills, grouped by what they're for. All auto-activate by description (or run any with `/<name>`).
 
 ### Discipline & workflow
 | Skill | What it does | Secrets |
@@ -51,6 +51,7 @@ Fifteen skills, grouped by what they're for. All auto-activate by description (o
 | [`handoff`](skills/handoff/SKILL.md) | Compact the session into a standalone handoff doc for a fresh agent (invoke-only) | none |
 | [`caveman`](skills/caveman/SKILL.md) | Terse-output mode — strips filler, keeps every fact/command exact (`lite`/`full`/`ultra`) | none |
 | [`semver`](skills/semver/SKILL.md) | The correct next version via SemVer — major/minor/patch, the 0.x rule, changelog→tag flow | none |
+| [`security-audit`](skills/security-audit/SKILL.md) | Deep vulnerability audit via parallel subagents — triage → source→sink → adversarial FP cull → ranked findings (no paid tools) | none |
 
 ### Frontend & design
 | Skill | What it does | Secrets |

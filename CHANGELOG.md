@@ -2,6 +2,14 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.5.5] — 2026-07-01
+
+### Added
+- **`security-audit`** `v1.0.0` — an agent-powered vulnerability audit rebuilt to run on **free tools you already have**: ripgrep triage → parallel Claude subagents that trace source→sink → an adversarial skeptic pass that culls false positives → severity-ranked findings (`file:line` + exploit + fix). Method inspired by Vercel's **deepsec** pipeline (scan → process → revalidate), but with **no paid scanner, no external CLI, no API keys, no per-file billing** — it uses your own subagents. Slim `SKILL.md` + `references/patterns.md` (the CWE triage catalog). Pairs with `ethereum`/`solana` for chain-specific security and the built-in `/security-review` for quick diffs.
+
+### Note
+- Deliberately **not** a wrapper around the deepsec CLI: deepsec's deep pass is paid (it bills your LLM account — potentially thousands on large repos). We took the *methodology*, not the cost. Additive + pre-1.0 ⇒ **patch** (`0.5.4 → 0.5.5`).
+
 ## [0.5.4] — 2026-07-01
 
 ### Added — three skills (crypto + SEO)
