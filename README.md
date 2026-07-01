@@ -53,7 +53,7 @@ _Curated deliberately — see [PLAN.md](PLAN.md) for the roadmap and [GOVERNANCE
 
 You **don't** have to invoke skills with slash commands. The task-shaped skills (`image-gen`, `anti-slop-frontend`, `redesign-existing-projects`, `semver`) **auto-activate by description** when your request matches them — or run them explicitly with `/<name>`.
 
-`lazy-surgical` is a coding *temperament* you'd want on every edit, so the kit ships a `SessionStart` hook ([`hooks/session-start.js`](hooks/session-start.js)) that injects its rules into **every session** automatically. To turn it off, disable the plugin's hook in `/plugin` or remove the `hooks` field from your copy's `.claude-plugin/plugin.json`. (Requires Node.js; if Node isn't present the hook is skipped harmlessly.)
+`lazy-surgical` is a coding *temperament* you'd want on every edit, so the kit ships a `SessionStart` hook ([`hooks/hooks.json`](hooks/hooks.json) → [`hooks/session-start.js`](hooks/session-start.js)) that injects its rules into **every session** automatically. (`hooks/hooks.json` is auto-loaded by Claude Code — it is intentionally **not** declared in `plugin.json`, which would double-load it.) To turn it off, disable the plugin in `/plugin` or delete `hooks/hooks.json` from your copy. (Requires Node.js; if Node isn't present the hook is skipped harmlessly.)
 
 ## Philosophy
 

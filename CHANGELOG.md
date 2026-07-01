@@ -2,6 +2,11 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.5.1] — 2026-07-01
+
+### Fixed
+- **SessionStart hook now loads cleanly.** Removed the `"hooks"` field from `plugin.json` — Claude Code auto-loads the standard `hooks/hooks.json`, so declaring it too caused a "Duplicate hooks file detected" error at install/enable. The always-on `lazy-surgical` hook now loads without error. Bug fix ⇒ **patch** (`0.5.0 → 0.5.1`).
+
 ## [0.5.0] — 2026-07-01
 
 ### Changed
