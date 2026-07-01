@@ -2,6 +2,11 @@
 
 All notable changes to claude-kit. Versions track `plugin.json`; `/plugin update` keys on them.
 
+## [0.5.0] — 2026-07-01
+
+### Changed
+- **Renamed `frontend-design` → `anti-slop-frontend`** to avoid a name + purpose clash with Anthropic's official `frontend-design` plugin. Folder, frontmatter `name`, and all cross-references (README, `redesign-existing-projects`) updated. Renaming a published skill is breaking ⇒ **minor** bump (`0.4.1 → 0.5.0`).
+
 ## [0.4.1] — 2026-07-01
 
 ### Added

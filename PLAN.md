@@ -25,7 +25,7 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 | `devlog` | **Local-only** — stays in `~/.claude/skills/`, not part of the shared kit (tuned to a personal workflow) | none | — |
 | `design-mockup` | **Folded into `image-gen`** (v0.3.0) — game-art templates moved into the prompt guide; skill removed | — | — |
 | `generate-image` | **Local-only** — pure TerraCore brand tooling (brand suffix, on-disk asset paths, game API); `design-mockup` covers neutral gen | — | — |
-| `design-taste-frontend` | **Shipped v0.1.2** as slim house skill `frontend-design` — distilled from taste-skill, not re-vendored | none | ✅ |
+| `design-taste-frontend` | **Shipped v0.1.2** as slim house skill `anti-slop-frontend` — distilled from taste-skill, not re-vendored | none | ✅ |
 | `redesign-existing-projects` | **Shipped v0.1.2** — split into slim SKILL.md + `references/audit-checklist.md` | none | ✅ |
 | `hive-post` | **Local-only** — Hive/PeakD blogging, niche to your workflow; not part of the shared kit | — | — |
 | `peakd-publish` | **Local-only** — Hive broadcast via hive-js (posting key); too personal + secret-heavy to share | — | — |
@@ -43,11 +43,12 @@ Structure the repo as **both** a native Claude Code plugin/marketplace **and** `
 
 - **v0.1 (done):** scaffold + governance + roadmap (no bundled skill; `devlog` stays local-only).
 - **v0.1.1 (done):** `semver` — teaches SemVer so agents version the kit (and any project) correctly.
-- **v0.1.2:** added `lazy-surgical`, `frontend-design`, `redesign-existing-projects`, `design-mockup`, `concept-to-3d`.
+- **v0.1.2:** added `lazy-surgical`, `anti-slop-frontend`, `redesign-existing-projects`, `design-mockup`, `concept-to-3d`.
 - **v0.2.0 (done):** removed `concept-to-3d` (out of scope for a general kit; stays local). Breaking ⇒ minor bump pre-1.0.
 - **v0.3.0 (done):** added `image-gen` (general OpenRouter image gen) and folded `design-mockup` into it.
-- **v0.3.1 (done):** de-duped `redesign-existing-projects` against `frontend-design`.
+- **v0.3.1 (done):** de-duped `redesign-existing-projects` against `anti-slop-frontend`.
 - **v0.4.0 (done):** renamed `frontend-taste` → `frontend-design`.
+- **v0.5.0 (done):** renamed `frontend-design` → `anti-slop-frontend` (avoids clashing with Anthropic's official `frontend-design` plugin).
 - **v0.4.1 (done):** added a `SessionStart` hook that keeps `lazy-surgical` always-on (no slash needed).
 - **Next:** cut **`1.0.0`** once the skill set feels stable (per the `semver` skill, the pre-1.0 → 1.0 stabilization milestone). Optional later: `security-review` (deepsec wrap) if you start running security passes.
 
